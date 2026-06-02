@@ -1,0 +1,24 @@
+import telebot
+
+TOKEN =8982862940:AAGj1PkchZ5azRRvrzu9RtPNoalMf84ZrEo
+
+bot = telebot.TeleBot(TOKEN)
+
+@bot.message_handler(commands=['start'])
+def start(message):
+    bot.reply_to(message, "✨ Hello! Main Bella hu 💖")
+
+@bot.message_handler(commands=['help'])
+def help_cmd(message):
+    bot.reply_to(message, """
+🌸 Bella Commands 🌸
+
+/start - Start Bella
+/help - Show commands
+/chat - AI Chat
+/menu - Open menu
+""")
+
+print("Bella is running...")
+
+bot.infinity_polling()
